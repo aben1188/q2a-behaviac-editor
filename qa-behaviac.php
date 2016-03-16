@@ -147,7 +147,8 @@ class qa_behaviac
 
     function get_field(&$qa_content, $content, $format, $fieldname, $rows /* $autofocus parameter deprecated */)
     {
-        $scriptsrc = "http://cdn-source.ckeditor.com/4.5.7/full-all/ckeditor.js";
+        //$scriptsrc = "http://cdn-source.ckeditor.com/4.5.7/full-all/ckeditor.js";
+        $scriptsrc = $this->urltoroot."ckeditor.js";
         $alreadyadded = false;
 
         if (isset($qa_content['script_src']))
@@ -202,23 +203,23 @@ class qa_behaviac
 //						removePlugins : 'specialchar, spellchecker, tabletools, pastetext, pastefromword' ,
 						defaultLanguage : " . qa_js(qa_opt('site_language')) . " ,
 						disableNativeSpellChecker : false ,
-						extraPlugins : 'uploadimage',
+						extraPlugins : 'uploadimage,autolink',
 						tabSpaces : 4 ,
 						toolbar : [
-								{ name: 'document', items: [ 'Source', '-', 'Save', 'NewPage', 'Preview', 'Print', '-', 'Templates' ] },
-                                { name: 'clipboard', items: [ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo' ] },
-                                { name: 'editing', items: [ 'Find', 'Replace', '-', 'SelectAll', '-', 'Scayt' ] },
-                                { name: 'forms', items: [ 'Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 'HiddenField' ] },
-                                '/',
-                                { name: 'basicstyles', items: [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat' ] },
-                                { name: 'paragraph', items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl', 'Language' ] },
-                                { name: 'links', items: [ 'Link', 'Unlink', 'Anchor' ] },
-                                { name: 'insert', items: [ 'Image', 'Flash', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar', 'PageBreak', 'Iframe' ] },
-                                '/',
-                                { name: 'styles', items: [ 'Styles', 'Format', 'Font', 'FontSize' ] },
-                                { name: 'colors', items: [ 'TextColor', 'BGColor' ] },
-                                { name: 'tools', items: [ 'Maximize', 'ShowBlocks' ] },
-                                { name: 'about', items: [ 'About' ] }
+									{ name: 'document', items: [ 'Source', '-', 'Save', 'NewPage', 'Preview', 'Print', '-', 'Templates' ] },
+                                    { name: 'clipboard', items: [ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo' ] },
+                                    { name: 'editing', items: [ 'Find', 'Replace', '-', 'SelectAll', '-', 'Scayt' ] },
+                                    { name: 'forms', items: [ 'Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 'HiddenField' ] },
+
+                                    { name: 'basicstyles', items: [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat' ] },
+                                    { name: 'paragraph', items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl', 'Language' ] },
+                                    { name: 'links', items: [ 'Link', 'Unlink', 'Anchor' ] },
+                                    { name: 'insert', items: [ 'Image', 'Flash', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar', 'PageBreak', 'Iframe' ] },
+
+                                    { name: 'styles', items: [ 'Styles', 'Format', 'Font', 'FontSize' ] },
+                                    { name: 'colors', items: [ 'TextColor', 'BGColor' ] },
+                                    { name: 'tools', items: [ 'Maximize', 'ShowBlocks' ] },
+                                    { name: 'about', items: [ 'About' ] }
 								] ,
 						pbckcode : {
 							    cls : '',
@@ -228,8 +229,8 @@ class qa_behaviac
 							    tab_size : '4',
 							    js : '" . qa_opt('site_url') . "qa-plugin/" . AMI_EXP_EDITOR_DIR_NAME . "/ace-min/'
 							},
-						removeButtons : 'About,Cut,Copy,Paste,PasteText,PasteFromWord,Find,SelectAll,Scayt,Replace,JustifyLeft,JustifyCenter,JustifyRight,JustifyBlock,Language,BidiLtr,BidiRtl,Blockquote,CreateDiv,Outdent,Indent,NumberedList,BulletedList',
-						skin:'moono' ,
+						removeButtons :'Cut,Copy,Paste,PasteText,PasteFromWord,Save,NewPage,Preview,Print,Templates,Form,Checkbox,Radio,TextField,Select,Textarea,Button,ImageButton,HiddenField,CreateDiv,Blockquote,BidiLtr,BidiRtl,Language,About,HorizontalRule,PageBreak,Iframe',
+
 						toolbarCanCollapse:false ,
 						removePlugins:'elementspath' ,
 						resize_enabled:false ,
