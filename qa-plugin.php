@@ -18,12 +18,12 @@
 		exit;
 	}
 
-	if (!defined('AMI_EXP_EDITOR_DIR')) {
-	        define('AMI_EXP_EDITOR_DIR', dirname(__FILE__));
+	if (!defined('AMI_PJK_EDITOR_DIR')) {
+	        define('AMI_PJK_EDITOR_DIR', dirname(__FILE__));
 	}
 	
-	if (!defined('AMI_EXP_EDITOR_DIR_NAME')) {
-		    define('AMI_EXP_EDITOR_DIR_NAME', basename(dirname(__FILE__)));
+	if (!defined('AMI_PJK_EDITOR_DIR_NAME')) {
+		    define('AMI_PJK_EDITOR_DIR_NAME', basename(dirname(__FILE__)));
 	}
 
 

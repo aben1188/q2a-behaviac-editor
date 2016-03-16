@@ -163,6 +163,8 @@ class qa_behaviac
             $ui_color = strlen(qa_opt('wysiwyg_editor_ui_color')) ? qa_opt('wysiwyg_editor_ui_color') : '#eeeeee';
 
             $qa_content['script_src'][] = $scriptsrc;
+
+            $qa_content['script_src'][]=$this->urltoroot.'plugins/codesnippet/lib/highlight/highlight.pack.js';
             /*$qa_content['script_lines'][]=array(
                 "qa_wysiwyg_editor_config={".
                     "uiColor: '".$ui_color."',".
@@ -203,10 +205,11 @@ class qa_behaviac
 //						removePlugins : 'specialchar, spellchecker, tabletools, pastetext, pastefromword' ,
 						defaultLanguage : " . qa_js(qa_opt('site_language')) . " ,
 						disableNativeSpellChecker : false ,
-						extraPlugins : 'uploadimage,autolink',
+						extraPlugins : 'uploadimage,autolink,codesnippet',
+						codeSnippet_theme: 'monokai_sublime',
 						tabSpaces : 4 ,
 						toolbar : [
-									{ name: 'document', items: [ 'Source', '-', 'Save', 'NewPage', 'Preview', 'Print', '-', 'Templates' ] },
+									{ name: 'document', items: [ 'Source', 'code','-', 'Save', 'NewPage', 'Preview', 'Print', '-', 'Templates' ] },
                                     { name: 'clipboard', items: [ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo' ] },
                                     { name: 'editing', items: [ 'Find', 'Replace', '-', 'SelectAll', '-', 'Scayt' ] },
                                     { name: 'forms', items: [ 'Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 'HiddenField' ] },
@@ -218,7 +221,7 @@ class qa_behaviac
 
                                     { name: 'styles', items: [ 'Styles', 'Format', 'Font', 'FontSize' ] },
                                     { name: 'colors', items: [ 'TextColor', 'BGColor' ] },
-                                    { name: 'tools', items: [ 'Maximize', 'ShowBlocks' ] },
+                                    { name: 'tools', items: [ 'Maximize', 'ShowBlocks','CodeSnippet' ] },
                                     { name: 'about', items: [ 'About' ] }
 								] ,
 						pbckcode : {
@@ -227,7 +230,7 @@ class qa_behaviac
 							    modes : " . $modes . ",
 							    theme : " . qa_js(qa_opt('wysiwyg_editor_ace_theme')) . ",
 							    tab_size : '4',
-							    js : '" . qa_opt('site_url') . "qa-plugin/" . AMI_EXP_EDITOR_DIR_NAME . "/ace-min/'
+							    js : '" . qa_opt('site_url') . "qa-plugin/" . AMI_PJK_EDITOR_DIR_NAME . "/ace-min/'
 							},
 						removeButtons :'Cut,Copy,Paste,PasteText,PasteFromWord,Save,NewPage,Preview,Print,Templates,Form,Checkbox,Radio,TextField,Select,Textarea,Button,ImageButton,HiddenField,CreateDiv,Blockquote,BidiLtr,BidiRtl,Language,About,HorizontalRule,PageBreak,Iframe',
 
