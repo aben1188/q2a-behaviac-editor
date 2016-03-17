@@ -48,7 +48,7 @@ class qa_behaviac_upload
             $upload = qa_upload_file_one(
                 qa_opt('wysiwyg_editor_upload_max_size'),
                 qa_get('qa_only_image') || !qa_opt('wysiwyg_editor_upload_all'),
-                qa_get('qa_only_image') ? 600 : null, // max width if it's an image upload
+                qa_get('qa_only_image') ? 1600 : null, // max width if it's an image upload
                 null // no max height
             );
 
