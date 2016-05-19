@@ -53,10 +53,16 @@
 				},
 
 				onUploaded: function( upload ) {
+					var width = this.parts.img.$.naturalWidth;
+					var height = this.parts.img.$.naturalHeight;
+					if(width > 600){
+						height = height*600/width;
+						width = 600;
+					}
 					// Set width and height to prevent blinking.
 					this.replaceWith( '<img src="' + upload.url + '" ' +
-						'width="' + this.parts.img.$.naturalWidth + '" ' +
-						'height="' + this.parts.img.$.naturalHeight + '">' );
+						'width="' + width + '" ' +
+						'height="' + height + '">' );
 				}
 			} );
 

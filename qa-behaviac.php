@@ -205,7 +205,7 @@ class qa_behaviac
 //						removePlugins : 'specialchar, spellchecker, tabletools, pastetext, pastefromword' ,
 						defaultLanguage : " . qa_js(qa_opt('site_language')) . " ,
 						disableNativeSpellChecker : false ,
-						extraPlugins : 'uploadimage,autolink,codesnippet',
+						extraPlugins : 'uploadimage,autolink,codesnippet,dropler',
 						codeSnippet_theme: 'monokai_sublime',
 						tabSpaces : 4 ,
 						toolbar : [
@@ -240,6 +240,12 @@ class qa_behaviac
 						autogrow:true ,
 						entities:false ,
 						imageUploadUrl:'',
+						droplerConfig:{
+						        backend: 'basic',
+						        settings: {
+						            uploadUrl:" . qa_js(qa_path('wysiwyg-editor-upload', array('qa_only_image' => true, 'qa_json' => true))) . ",
+						        }
+						    },
 						uploadUrl:" . qa_js(qa_path('wysiwyg-editor-upload', array('qa_only_image' => true, 'qa_json' => true))) . ",
 						" . ($uploadimages ? ("filebrowserImageUploadUrl:" . qa_js(qa_path('wysiwyg-editor-upload', array('qa_only_image' => true)))) . "," : "") . "
 						" . ($uploadall ? ("filebrowserUploadUrl:" . qa_js(qa_path('wysiwyg-editor-upload'))) . "," : "") . "
