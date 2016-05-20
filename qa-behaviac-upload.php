@@ -54,6 +54,7 @@ class qa_behaviac_upload
 
             $message = @$upload['error'];
             $url = @$upload['bloburl'];
+
         }
         if (qa_get('qa_json')) {
             $data=[];
@@ -63,6 +64,9 @@ class qa_behaviac_upload
             $data['error']=[];
             $data['error']['number']=201;
             $data['error']['message']='OK';
+
+            $data['upload_info']=$upload;
+
             echo json_encode($data);
         } else {
             echo "<script type='text/javascript'>window.parent.CKEDITOR.tools.callFunction(" . qa_js(qa_get('CKEditorFuncNum')) .
