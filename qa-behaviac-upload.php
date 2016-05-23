@@ -65,7 +65,7 @@ class qa_behaviac_upload
             $data['error']['number']=201;
             $data['error']['message']='OK';
 
-            $data['upload_info']= @$upload;
+            $data['upload_info'] = @$upload;
 
             echo json_encode($data);
         } else {
