@@ -202,6 +202,7 @@ class qa_behaviac
                 "qa_wysiwyg_editor_config={
 						uiColor: '" . $ui_color . "',
 						title : false ,
+						height: 500,
 //						removePlugins : 'specialchar, spellchecker, tabletools, pastetext, pastefromword' ,
 						defaultLanguage : " . qa_js(qa_opt('site_language')) . " ,
 						disableNativeSpellChecker : false ,
